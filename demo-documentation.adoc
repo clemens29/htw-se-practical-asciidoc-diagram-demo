@@ -16,10 +16,9 @@ Ein Testdiagramm, ob die Vorschau in VS Code bzw. die Generierung mit Asciidocto
 .Testdiagramm
 [plantuml, "{diagramsdir}/hello_world", svg]
 ....
-actor Human
-(\nWorld\n) #dff
-note right of Human : Hello
+actor Nutzer
 ....
+
 
 .Graphiz Dot Test
 [plantuml, "{diagramsdir}/testdot", svg]
@@ -35,11 +34,64 @@ Hinweise zur Einrichtung siehe zugehörige Aufgabenstellung.
 
 Ein Beispiel für ein direkt im Dokument eingebettetes PlantUML-Diagramm.
 
-// diagram placeholder
+.Klassendiagramm mit PlantUML 
+[plantuml, "{diagramsdir}/syntax-example1", svg]  
+....
+class Graphic 
+interface Shape <<Interface>> {
+  draw()
+}
+class Circle
+class Triangle
+class Square
+
+Graphic -> Shape
+Shape <|.. Circle
+Shape <|.. Triangle
+Shape <|.. Square
+....
 
 === Inkludiert
 
 Ein Beispiel für ein im Dokument inkludiertes PlantUML-Diagramm als externe Datei.
 
-// diagram placeholder
+.Klassendiagramm mit PlantUML
+[plantuml, "{diagramsdir}/syntax-example2", svg]
+....
+include::{plantumlsdir}/syntax-example.puml[]
+....
+
+=== Aufgabe 1
+
+.Klassendiagramm mit PlantUML
+[plantuml, "{diagramsdir}/aufg1.puml", svg]
+....
+include::{plantumlsdir}/aufg1.puml[]
+....
+
+=== Aufgabe 2
+siehe Cocktailversand
+
+=== Aufgabe 3
+.Klassendiagramm mit PlantUML
+[plantuml, "{diagramsdir}/example_class-diagram.puml", svg]
+....
+include::{plantumlsdir}/example_class-diagram.puml[]
+....
+
+=== Aufgabe 4
+
+.Klassendiagramm mit PlantUML
+[plantuml, "{diagramsdir}/example_activity-diagram.puml", svg]
+....
+include::{plantumlsdir}/example_activity-diagram.puml[]
+....
+
+=== Aufgabe 5
+
+.Klassendiagramm mit PlantUML
+[plantuml, "{diagramsdir}/example_c4-model-diagram.puml", svg]
+....
+include::{plantumlsdir}/example_c4-model-diagram.puml[]
+....
 
